@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="it">
+<head>
+</head>
+<body id="pageBody">
+    <h2>Conteggio ore</h2>
+    <h4>Anno: <input id="year_selector" type="number" min="1" step="1" /></h4>
+    <h4>Mese: 
+      <select id="month_selector">
+      </select>
+    </h4>
+    <br>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr class="head">
+                            <td style="width: 15%;">Giorno</td>
+                            <td>Data</td>
+                            <td>Ore</td>
+                            <td style="width: 60%;">Note</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <h4 style="text-align: left;">Ore totali: <b id="total_hours">0</b></h4>
+    </div>
+    <br><br>
+    <div class="button_container hide-print">
+        <button type="button" class="btn btn-primary" id="print">Stampa</button>
+        <button type="button" class="btn btn-primary" id="exportHoursAsPlainText" style="display: none">Esporta orari</button>
+        <button type="button" class="btn btn-primary" id="exportHoursAsExcel">Esporta orari come file excel</button>
+    </div>
+    <br>
+</body>
+</html>

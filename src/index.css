@@ -1,0 +1,22 @@
+td {
+    text-align: center;
+    vertical-align: middle;
+}
+.day_name {
+    text-align: left;
+}
+.button_container{
+    text-align: right;
+    margin-right: 0.5em;
+}
+.hide {
+    display: none;
+}
+@media print {
+    .hide-print {
+        display: none;
+    }
+    input {
+        display: none;
+    }
+}
