@@ -1,6 +1,8 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
+const ASSET_PATH = process.env.ASSET_PATH || './';
+
 module.exports = {
   entry: {
     main: path.resolve(__dirname, './src/main.js')
@@ -10,7 +12,7 @@ module.exports = {
     chunkFilename: "[name].bundle.js?h=[chunkhash]",
     path: path.resolve(__dirname, 'dist'),
     clean: true,
-    publicPath: '/',
+    publicPath: ASSET_PATH,
   },
   plugins: [
     new HtmlWebpackPlugin({
