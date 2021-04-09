@@ -9,7 +9,6 @@ CMD [ "node", "server.js" ]
 FROM node:14-alpine
 WORKDIR /usr/src/app
 COPY --from=bundler /usr/src/app/dist ./dist
-RUN npm install --only=prod; curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin; /usr/local/bin/node-prune
-
+RUN npm install --only=prod
 EXPOSE 3000
 CMD [ "node", "server.js" ]
