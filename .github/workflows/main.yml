@@ -56,11 +56,11 @@ jobs:
       - name: Check out the repo
         uses: actions/checkout@v2
       - name: Build docker image
-        run: docker build -t docker.pkg.github.com//MatteoGheza/conteggio_ore/server:latest .
+        run: docker build -t docker.pkg.github.com/MatteoGheza/conteggio_ore/server:latest .
       - name: Push to GitHub Packages
         uses: docker/build-push-action@v1
         with:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
           registry: docker.pkg.github.com
-          repository: docker.pkg.github.com//MatteoGheza/conteggio_ore/server
+          repository: docker.pkg.github.com/MatteoGheza/conteggio_ore/server
