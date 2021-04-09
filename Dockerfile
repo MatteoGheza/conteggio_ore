@@ -1,4 +1,4 @@
-FROM node:14 as bundler
+FROM node:14-alpine as bundler
 WORKDIR /usr/src/app
 COPY . .
 RUN npm install webpack webpack-cli -g; npm install
@@ -6,9 +6,10 @@ RUN npm run build
 EXPOSE 3000
 CMD [ "node", "server.js" ]
 
-FROM node:14
+FROM node:14-alpine
 WORKDIR /usr/src/app
 COPY --from=bundler /usr/src/app/dist ./dist
-RUN npm install --only=prod
+RUN npm install --only=prod; curl -sfL https://install.goreleaser.com/github.com/tj/node-prune.sh | bash -s -- -b /usr/local/bin; /usr/local/bin/node-prune
+
 EXPOSE 3000
 CMD [ "node", "server.js" ]
