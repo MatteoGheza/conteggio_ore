@@ -123,6 +123,8 @@ function exportHoursAsPlainText(){
     download(JSON.stringify(exportHours()), "json", "application/json");
 }
 
+console.log("CI Test");
+
 document.addEventListener("DOMContentLoaded", function() {
     document.querySelector("#year_selector").value = dayjs().year();
     generateMonthSelector();
